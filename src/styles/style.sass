@@ -1,0 +1,62 @@
+@import "colors"
+@import "fonts"
+@import "mixins"
+@import "reset"
+@import "vars"
+
+html 
+  height: 100%
+
+body 
+  font-family: roboto-mono-medium
+  @include font-default
+  color: $font-color
+  background-color: $background-color
+
+.section 
+  position: relative
+  padding: $padding-desktop
+
+  @media screen and (min-width: $tableWidth) 
+    
+  
+  @media screen and (min-width: $PhoneWidth) 
+    padding: $padding-mobile
+  
+.wrapper 
+  display: flex
+  flex-direction: column
+  margin: 0 auto
+  min-height: 100vh
+
+.content-wrapper 
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+.container 
+  width: 100%
+  flex: 0 0 auto
+  position: relative
+  margin: 0 auto
+  max-width: $desktopWidth
+  @media screen and (max-width: $smDesktopWidth) 
+    max-width: tableWidth
+  
+  @media screen and (max-width: $tableWidth) 
+    max-width: phoneWidth
+  
+  @media screen and (max-width: $phoneWidth) 
+    max-width: smPhoneWidth
+  
+#mobile
+  display: block !important
+
+table 
+  display: none
+
+img 
+  width: 100%
+
+.en, .ru 
+  position: absolute
