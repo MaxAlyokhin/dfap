@@ -8,55 +8,76 @@ html
   height: 100%
 
 body 
+  height: inherit
   font-family: roboto-mono-medium
   @include font-default
   color: $font-color
   background-color: $background-color
-
-.section 
-  position: relative
-  padding: $padding-desktop
-
-  @media screen and (min-width: $tableWidth) 
-    
+  overflow: hidden
+  .container
+    height: inherit
+    padding: $padding-desktop
+    @media screen and (max-width: $tableWidth) 
+      padding: $padding-desktop
+    @media screen and (max-width: $phoneWidth) 
+      padding: $padding-mobile
+    .section-header, .section-first-section, .section-razyob
+      height: inherit
+      // position: relative
+      display: flex
+      flex-direction: row
+      flex-wrap: nowrap
+      @media screen and (max-width: $desktopWidth) 
+        flex-wrap: wrap
+      .album-image
+        // flex-basis: content
+        height: 100%
+        img
+          height: 100%
+      .description
+        // flex-grow: 1 // Заполнить оставшееся место
+        padding-left: $padding-desktop
+      .description-header-en, .description-header-ru 
+        // align-items: flex-start
+      .description-razyob-en, .description-razyob-ru, .description-first-section-en, .description-first-section-ru
+        // align-items: flex-end
+      .description-header-ru_disactive, .description-header-en_disactive, .description-first-section-en_disactive, .description-first-section-ru_disactive, .description-razyob-en_disactive, .description-razyob-ru_disactive
+        display: none
+    .menu
+      height: inherit
+      position: fixed
+      display: flex
+      // align-items: center
+      justify-content: center
+      flex-direction: column
+      right: $padding-desktop
+      top: 0
+      height: 100%
+      line-height: 28px
+      @media screen and (max-width: $desktopWidth) 
+        flex-direction: row
+        align-items: flex-end
+        justify-content: space-between
+      .language
+        flex-direction: column
+        display: flex
+        text-align: right
+        .menu-language-en-item, .menu-language-ru-item
+          cursor: pointer
+      .navigation
+        flex-direction: column
+        display: flex
+        text-align: right
+        .menu-navigation-0-item, .menu-navigation-1-item, .menu-navigation-2-item
+          cursor: pointer
   
-  @media screen and (min-width: $PhoneWidth) 
-    padding: $padding-mobile
+// .menu-language-en
+//   div
+//     display: inline-block
+//     height: 1px
+//     width: 100%
+//     color: $font-color
+
+ .menu-language-en-item, .menu-language-en-item
+   width: 16px 
   
-.wrapper 
-  display: flex
-  flex-direction: column
-  margin: 0 auto
-  min-height: 100vh
-
-.content-wrapper 
-  display: flex
-  flex-direction: column
-  min-height: 100vh
-
-.container 
-  width: 100%
-  flex: 0 0 auto
-  position: relative
-  margin: 0 auto
-  max-width: $desktopWidth
-  @media screen and (max-width: $smDesktopWidth) 
-    max-width: tableWidth
-  
-  @media screen and (max-width: $tableWidth) 
-    max-width: phoneWidth
-  
-  @media screen and (max-width: $phoneWidth) 
-    max-width: smPhoneWidth
-  
-#mobile
-  display: block !important
-
-table 
-  display: none
-
-img 
-  width: 100%
-
-.en, .ru 
-  position: absolute
