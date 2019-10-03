@@ -14,35 +14,33 @@ body
   color: $font-color
   background-color: $background-color
   overflow: hidden
+  transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1)
   .container
+    position: relative
     height: inherit
     padding: $padding-desktop
-    @media screen and (max-width: $tableWidth) 
-      padding: $padding-desktop
     @media screen and (max-width: $phoneWidth) 
       padding: $padding-mobile
     .section-header, .section-first-section, .section-razyob
-      height: inherit
-      // position: relative
+      position: absolute
+      height: calc(100% - 90px)
+      width: calc(100% - 90px)
       display: flex
       flex-direction: row
       flex-wrap: nowrap
       @media screen and (max-width: $desktopWidth) 
         flex-wrap: wrap
       .album-image
-        // flex-basis: content
         height: 100%
         img
           height: 100%
       .description
-        // flex-grow: 1 // Заполнить оставшееся место
         padding-left: $padding-desktop
       .description-header-en, .description-header-ru 
-        // align-items: flex-start
+        z-index: 100
+        align-self: flex-start
       .description-razyob-en, .description-razyob-ru, .description-first-section-en, .description-first-section-ru
-        // align-items: flex-end
-      .description-header-ru_disactive, .description-header-en_disactive, .description-first-section-en_disactive, .description-first-section-ru_disactive, .description-razyob-en_disactive, .description-razyob-ru_disactive
-        display: none
+        z-index: 100
     .menu
       height: inherit
       position: fixed
@@ -53,7 +51,7 @@ body
       right: $padding-desktop
       top: 0
       height: 100%
-      line-height: 28px
+      line-height: 21px
       @media screen and (max-width: $desktopWidth) 
         flex-direction: row
         align-items: flex-end
@@ -71,13 +69,10 @@ body
         .menu-navigation-0-item, .menu-navigation-1-item, .menu-navigation-2-item
           cursor: pointer
   
-// .menu-language-en
-//   div
-//     display: inline-block
-//     height: 1px
-//     width: 100%
-//     color: $font-color
+.description-wrapper
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
 
- .menu-language-en-item, .menu-language-en-item
-   width: 16px 
-  
+// .disactive
+//   display: none
