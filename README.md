@@ -1,2 +1,2 @@
 # dfap
- Wesite for DFAP musical project
+ Website for DFAP musical project
