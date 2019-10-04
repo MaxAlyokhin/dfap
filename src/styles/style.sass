@@ -15,12 +15,19 @@ body
   background-color: $background-color
   overflow: hidden
   transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1)
+  @media screen and (max-width: $desktopWidth)
+    overflow: visible
+
   .container
     position: relative
     height: inherit
     padding: $padding-desktop
+    
+    @media screen and (max-width: $desktopWidth) 
+      padding: $padding-tablet
     @media screen and (max-width: $phoneWidth) 
       padding: $padding-mobile
+
     .section-header, .section-first-section, .section-razyob
       position: absolute
       height: calc(100% - 90px)
@@ -30,49 +37,131 @@ body
       flex-wrap: nowrap
       @media screen and (max-width: $desktopWidth) 
         flex-wrap: wrap
+        height: auto
+        padding-bottom: 90px
+      @media screen and (max-width: $phoneWidth)
+        width: calc(100% - 60px)
+        text-align: justify
+        padding-bottom: 60px
+
       .album-image
         height: 100%
+        @media screen and (max-width: $desktopWidth)
+          height: auto
+
         img
           height: 100%
+          @media screen and (max-width: $desktopWidth)
+            width: 100%
+            height: auto
+
       .description
         padding-left: $padding-desktop
+        @media screen and (max-width: $desktopWidth)
+          padding-left: 0
+          padding-top: 30px
+        @media screen and (max-width: $phoneWidth)
+          padding-left: 0
+          padding-top: 30px
+
       .description-header-en, .description-header-ru 
         z-index: 100
         align-self: flex-start
-      .description-razyob-en, .description-razyob-ru, .description-first-section-en, .description-first-section-ru
-        z-index: 100
+      
+      .description-wrapper
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+
+        .description
+          padding-left: $padding-desktop
+          @media screen and (max-width: $desktopWidth)
+            padding-left: 0
+            padding-top: $padding-desktop
+          @media screen and (max-width: $phoneWidth)
+            padding-left: 0
+            padding-top: 30px
+
+        .description-razyob-en, .description-razyob-ru, .description-first-section-en, .description-first-section-ru
+          z-index: 100
+
     .menu
       height: inherit
       position: fixed
       display: flex
-      // align-items: center
       justify-content: center
       flex-direction: column
       right: $padding-desktop
       top: 0
-      height: 100%
       line-height: 21px
       @media screen and (max-width: $desktopWidth) 
-        flex-direction: row
-        align-items: flex-end
         justify-content: space-between
+        bottom: 45px
+        width: calc(100% - 90px)
+        height: auto
+        line-height: 14px
+        top: unset
+        flex-direction: unset
+        line-height: 68px
+        background-color: #ffffff
+        z-index: 100
+        bottom: 0
+      @media screen and (max-width: $phoneWidth)
+        width: calc(100% - 60px)
+        // bottom: 30px
+        right: auto
+        
+
       .language
         flex-direction: column
         display: flex
         text-align: right
+        @media screen and (max-width: $desktopWidth)
+          text-align: unset
+          display: inline-block
+
+        .menu-language-ru
+          @media screen and (max-width: $desktopWidth)
+            .arrow-ru
+              display: none !important
+
+        .menu-language-en
+          @media screen and (max-width: $desktopWidth)
+            .arrow-en
+              display: none !important
+
         .menu-language-en-item, .menu-language-ru-item
           cursor: pointer
+
       .navigation
         flex-direction: column
         display: flex
         text-align: right
+        @media screen and (max-width: $desktopWidth)
+          text-align: unset
+          display: inline-block
+
+        .menu-navigation-0
+          .arrow-navigation-0
+            @media screen and (max-width: $desktopWidth)
+              display: none !important
+        .menu-navigation-1
+          .arrow-navigation-1
+            @media screen and (max-width: $desktopWidth)
+              display: none !important
+        .menu-navigation-2
+          .arrow-navigation-2
+            @media screen and (max-width: $desktopWidth)
+              display: none !important
+
         .menu-navigation-0-item, .menu-navigation-1-item, .menu-navigation-2-item
           cursor: pointer
   
-.description-wrapper
-  display: flex
-  flex-direction: column
-  justify-content: flex-end
+.underline
+  @media screen and (max-width: $desktopWidth)
+    text-decoration: underline
 
-// .disactive
-//   display: none
+.void
+  display: none
+  @media screen and (max-width: $desktopWidth)
+    display: block
