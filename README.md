@@ -12,8 +12,6 @@ Independent project with a nonbrand but exact name from Krasnodar, Russia, speci
 
 Own design layout is made in Figma. The site is a set of screens switched by JS using the navigation menu. The layout of all elements of the interface is written using Flexbox, and the main Sass-file with styles is written with a deep nesting, which gives a highly specific CSS after compilation. Separately, the mobile version of the site and the rearrangement of the navigation menu and text blocks with images is completed.
 
-Translated with www.DeepL.com/Translator
-
 You can check the project by clicking here:
 http://dfap.stranno.su
 
