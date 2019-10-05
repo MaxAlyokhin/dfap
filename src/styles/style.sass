@@ -108,10 +108,8 @@ body
         bottom: 0
       @media screen and (max-width: $phoneWidth)
         width: calc(100% - 60px)
-        // bottom: 30px
         right: auto
         
-
       .language
         flex-direction: column
         display: flex
@@ -165,3 +163,10 @@ body
   display: none
   @media screen and (max-width: $desktopWidth)
     display: block
+
+.section-header
+  .album-image
+    @media screen and (max-width: $desktopWidth)
+      display: none
+  .description
+    padding-top: 0 !important

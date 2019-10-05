@@ -1,14 +1,20 @@
 $(document).ready(function() {
 
 // Получение длины SVG стрелки
-  setTimeout(function(){
+  setInterval(function(){
     // Находим ширину блока
     let description_width = $('.description-header-en').css('width');
     // Находим ширину бокового меню
-    let description_width_value = parseInt(description_width.match(/\d+/))
-    let arrow_language_width = description_width_value - 67 + 'px'
-    $('.arrow-ru, .arrow-en, .arrow-navigation-0, .arrow-navigation-1, .arrow-navigation-2').attr('width', arrow_language_width);
-  }, 1000)
+    let description_width_value = parseInt(description_width.match(/\d+/));
+    let arrow_language_width = description_width_value - 67 + 'px';
+
+    if (body_width <= 1279) {
+      $('.arrow-ru, .arrow-en, .arrow-navigation-0, .arrow-navigation-1, .arrow-navigation-2').fadeOut(1500, 'easeOutQuart');
+    }
+    else {
+      $('.arrow-ru, .arrow-en, .arrow-navigation-0, .arrow-navigation-1, .arrow-navigation-2').attr('width', arrow_language_width);
+    }
+    }, 100)
 
 // Переключатель меню
   // Языки
@@ -137,35 +143,6 @@ $(document).ready(function() {
       scrollTop: 0
     }, 1500, 'easeInOutCubic');
     return false;
-  });
-  
-
-
-  
+  }); 
   
 })
-
-// click = 1;
-
-// function lang1() {
-//   if (click) {
-
-//     $('table#en').transition({ opacity: 0 }, 500, 'cubic-bezier(0.6, 0.04, 0.98, 0.335)');
-//     $('table#ru').transition({ opacity: 1 }, 500, 'cubic-bezier(0.6, 0.04, 0.98, 0.335)');
-
-//     $('.en').transition({ opacity: 0 }, 500, 'cubic-bezier(0.6, 0.04, 0.98, 0.335)');
-//     $('.ru').transition({ opacity: 1 }, 500, 'cubic-bezier(0.6, 0.04, 0.98, 0.335)');
-//     click = 0;
-
-//   }
-
-//   else {
-
-//     $('table#en').transition({ opacity: 1 }, 500, 'cubic-bezier(0.6, 0.04, 0.98, 0.335)');
-//     $('table#ru').transition({ opacity: 0 }, 500, 'cubic-bezier(0.6, 0.04, 0.98, 0.335)');
-
-//     $('.en').transition({ opacity: 1 }, 500, 'cubic-bezier(0.6, 0.04, 0.98, 0.335)');
-//     $('.ru').transition({ opacity: 0 }, 500, 'cubic-bezier(0.6, 0.04, 0.98, 0.335)');
-//     click = 1;
-//   }
-// }
