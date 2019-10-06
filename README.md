@@ -10,7 +10,7 @@ Independent project with a nonbrand but exact name from Krasnodar, Russia, speci
  
  ## Project implementation
  
- ![test](https://yadi.sk/i/N4voCswcojW1kA)
+ ![](http://dfap.stranno.su/img/design.png)
  
 Own design layout is made in Figma. The site is a set of screens switched by JS using the navigation menu. The layout of all elements of the interface is written using Flexbox, and the main Sass-file with styles is written with a deep nesting, which gives a highly specific CSS after compilation. Separately, the mobile version of the site and the rearrangement of the navigation menu and text blocks with images is completed.
 
