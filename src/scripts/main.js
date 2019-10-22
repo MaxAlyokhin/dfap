@@ -3,10 +3,12 @@ $(document).ready(function() {
 // Получение длины SVG стрелки
   setInterval(function(){
     // Находим ширину блока
-    let description_width = $('.description-header-en').css('width');
+    if (active_en == 1) { var description_width = $('.description-header-en').css('width'); }
+    if (active_en == 0) { var description_width = $('.description-header-ru').css('width'); }
     // Находим ширину бокового меню
     let description_width_value = parseInt(description_width.match(/\d+/));
     let arrow_language_width = description_width_value - 67 + 'px';
+    console.log(arrow_language_width);
 
     if (body_width <= 1279) {
       $('.arrow-ru, .arrow-en, .arrow-navigation-0, .arrow-navigation-1, .arrow-navigation-2').fadeOut(1500, 'easeOutQuart');
@@ -14,7 +16,7 @@ $(document).ready(function() {
     else {
       $('.arrow-ru, .arrow-en, .arrow-navigation-0, .arrow-navigation-1, .arrow-navigation-2').attr('width', arrow_language_width);
     }
-    }, 100)
+  }, 100)
 
 // Переключатель меню
   // Языки
@@ -34,9 +36,10 @@ $(document).ready(function() {
       $('.description-header-ru, .description-first-section-ru, .description-razyob-ru').fadeOut(1500, 'easeOutQuart');
       setTimeout(function(){
         $('.description-header-en, .description-first-section-en, .description-razyob-en').fadeIn(1500, 'easeOutQuart'); 
+        active_en = 1;
       }, 1500) 
 
-      active_en = 1;
+      
     }
   })
 
@@ -50,10 +53,11 @@ $(document).ready(function() {
 
       setTimeout(function(){
         $('.description-header-ru, .description-first-section-ru, .description-razyob-ru').fadeIn(1500, 'easeOutQuart'); 
+        active_en = 0;
       }, 1500)
       $('.description-header-en, .description-first-section-en, .description-razyob-en').fadeOut(1500, 'easeOutQuart');  
 
-      active_en = 0;
+      
     }
   })
   // Навигация
