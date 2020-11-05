@@ -51,7 +51,7 @@ const config = {
     server: {
         baseDir: "dist"
     },
-    tunnel: true,
+    tunnel: false,
     host: 'localhost',
     port: 8000,
     logPrefix: "DevServer",
