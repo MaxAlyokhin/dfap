@@ -1,6 +1,6 @@
-# Website for DFAP sound-art project
+## Website for DFAP sound-art project
 
-![](https://dfap.stranno.su/img/design.png)
+![](https://dfap.stranno.su/design.png)
 
 https://dfap.stranno.su
 
